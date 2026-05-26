@@ -1,11 +1,16 @@
 # Caractérisation de l'opérateur Dirichlet-à-Neumann pour l'équation des ondes
 
 **Projet académique mené pendant ma 2ème année aux Mines de Nancy en département Ingénierie Mathématique.**
+
 **Durée du projet**: 9 mois (sept 2025 - juin 2026)
+
 **Encadrant :** M. Dos Santos Ferreira (Institut Élie Cartan de Lorraine)
-Étude théorique et numérique de l'**opérateur Dirichlet-à-Neumann (DtN)** associé à l'équation des ondes, sur trois géométries successives (demi-espace, disque, cylindre), avec validation numérique et problème inverse de reconstruction géométrique.
 
 **Auteur :** Massaro Elias — 
+
+Étude théorique et numérique de l'**opérateur Dirichlet-à-Neumann (DtN)** associé à l'équation des ondes, sur trois géométries successives (demi-espace, disque, cylindre), avec validation numérique et problème inverse de reconstruction géométrique.
+
+
 ---
 
 ## Présentation du projet
