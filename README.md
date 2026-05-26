@@ -4,9 +4,9 @@
 
 **Durée du projet**: 9 mois (sept 2025 - juin 2026)
 
-**Encadrant :** M. Dos Santos Ferreira (Institut Élie Cartan de Lorraine)
+**Auteur :** Massaro Elias  
 
-**Auteur :** Massaro Elias — 
+**Encadrant :** M. Dos Santos Ferreira (Institut Élie Cartan de Lorraine)
 
 Étude théorique et numérique de l'**opérateur Dirichlet-à-Neumann (DtN)** associé à l'équation des ondes, sur trois géométries successives (demi-espace, disque, cylindre), avec validation numérique et problème inverse de reconstruction géométrique.
 
