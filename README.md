@@ -1,56 +1,56 @@
-# Caractérisation de l'opérateur Dirichlet-à-Neumann pour l'équation des ondes
+# Characterization of the Dirichlet-to-Neumann Operator for the Wave Equation
 
-**Projet académique mené pendant ma 2ème année aux Mines de Nancy en département Ingénierie Mathématique.**
+**Academic project carried out during my second year at Mines Nancy, in the Mathematical Engineering department.**
 
-**Durée du projet**: 9 mois (sept 2025 - juin 2026)
+**Project duration**: 9 months (September 2025 – June 2026)
 
-**Auteur :** Massaro Elias  
+**Author:** Massaro Elias  
 
-**Encadrant :** M. Dos Santos Ferreira (Institut Élie Cartan de Lorraine)
+**Supervisor:** M. Dos Santos Ferreira (Institut Élie Cartan de Lorraine)
 
-Étude théorique et numérique de l'**opérateur Dirichlet-à-Neumann (DtN)** associé à l'équation des ondes, sur trois géométries successives (demi-espace, disque, cylindre), avec validation numérique et problème inverse de reconstruction géométrique.
+Theoretical and numerical study of the **Dirichlet-to-Neumann (DtN) operator** associated with the wave equation, on three successive geometries (half-space, disc, cylinder), with numerical validation and an inverse problem of geometric reconstruction.
 
 
 ---
 
-## Présentation du projet
+## Project overview
 
-L'opérateur DtN associe à toute donnée au bord *f* le flux normal de la solution correspondante :
+The DtN operator assigns to any boundary datum *f* the normal flux of the corresponding solution:
 
 $$\Lambda : f\big|_\Gamma \;\longmapsto\; \partial_\nu u\big|_\Gamma$$
 
-Pour l'équation des ondes $\partial_t^2 u - \Delta u = 0$, cet opérateur est **pseudo-différentiel** — son symbole, en coordonnées cartésiennes sur le demi-espace, vaut $\sqrt{s^2 + |\xi'|^2}$ et n'est pas polynomial. Son expression explicite dans l'espace physique requiert des techniques d'inversion fines (transformées de Bessel/Hankel, théorie des distributions, factorisation de Hadamard-Weierstrass, décomposition de Mittag-Leffler).
+For the wave equation $\partial_t^2 u - \Delta u = 0$, this operator is **pseudodifferential** — its symbol, in Cartesian coordinates on the half-space, equals $\sqrt{s^2 + |\xi'|^2}$ and is not polynomial. Its explicit expression in physical space requires delicate inversion techniques (Bessel/Hankel transforms, distribution theory, Hadamard-Weierstrass factorization, Mittag-Leffler expansion).
 
-Le projet suit une démarche exploratoire : chaque géométrie impose une stratégie d'inversion différente, et le rapport retrace les impasses, reformulations et réussites de chaque étape.
+The project follows an exploratory approach: each geometry calls for a different inversion strategy, and the report retraces the dead ends, reformulations and successes of every stage.
 
 ---
 
-## Structure du projet
+## Project structure
 
-### Chapitre 2 — DtN sur le demi-espace
+### Chapter 2 — DtN on the half-space
 
-Deux calculs indépendants du noyau de $\Lambda_0$ sur $\mathbb{R}^{n-1} \times \mathbb{R}^*_+$ :
+Two independent computations of the kernel of $\Lambda_0$ on $\mathbb{R}^{n-1} \times \mathbb{R}^*_+$:
 
-- **Méthode 1** — Tables de Bessel–Hankel et partie finie de Hadamard : noyau causal en $(t^2 - |x'|^2)^{-3/2}$.
-- **Méthode 2** — Laplacien au sens des distributions : parties finies de $r^{-3}$ et $r^{-2}$.
+- **Method 1** — Bessel–Hankel tables and Hadamard finite part: causal kernel in $(t^2 - |x'|^2)^{-3/2}$.
+- **Method 2** — Laplacian in the sense of distributions: finite parts of $r^{-3}$ and $r^{-2}$.
 
-Le cas perturbé (potentiel *q(x)*) est également traité via l'équation intégrale de Lippmann-Schwinger, l'approximation de Born au premier ordre et la solution fondamentale retardée $E(x,t) = \delta(t-|x|)/(4\pi|x|)$.
+The perturbed case (potential *q(x)*) is also treated, via the Lippmann-Schwinger integral equation, the first-order Born approximation and the retarded fundamental solution $E(x,t) = \delta(t-|x|)/(4\pi|x|)$.
 
-### Chapitre 3 — DtN sur le disque unité
+### Chapter 3 — DtN on the unit disc
 
-Géométrie bornée $\Omega = \{|x| < 1\} \subset \mathbb{R}^2$. Le symbole modal est
+Bounded geometry $\Omega = \{|x| < 1\} \subset \mathbb{R}^2$. The modal symbol is
 
 $$\sigma_n(s) = s \, \frac{I'_n(s)}{I_n(s)}$$
 
-et admet des pôles aux zéros imaginaires $\pm i \, j_{n,k}$ des fonctions de Bessel modifiées. L'inversion directe terme à terme fait apparaître une série divergente de masses de Dirac. La résolution combine :
+and has poles at the imaginary zeros $\pm i \, j_{n,k}$ of the modified Bessel functions. Direct term-by-term inversion produces a divergent series of Dirac masses. The resolution combines:
 
-- **Factorisation de Hadamard-Weierstrass** de la dérivée logarithmique de $I_n$
-- **Transfert de dérivée** ($s^2 \hat{f} = \mathcal{L}\{f''\}$) pour rendre la série absolument convergente
-- Expression temporelle finale par convolutions à noyaux $\sin(j_{n,k} \, t)/j_{n,k}$
+- **Hadamard-Weierstrass factorization** of the logarithmic derivative of $I_n$
+- **Derivative transfer** ($s^2 \hat{f} = \mathcal{L}\{f''\}$) to make the series absolutely convergent
+- Final time-domain expression through convolutions with kernels $\sin(j_{n,k} \, t)/j_{n,k}$
 
-### Chapitre 4 — DtN sur le cylindre creux fini *(avec validation numérique)*
+### Chapter 4 — DtN on the finite hollow cylinder *(with numerical validation)*
 
-Cylindre $\Omega = S^1_R \times (0, L)$, deux bords $\Gamma_0$ et $\Gamma_L$. Le symbole devient **matriciel** :
+Cylinder $\Omega = S^1_R \times (0, L)$, with two boundaries $\Gamma_0$ and $\Gamma_L$. The symbol becomes **matrix-valued**:
 
 $$
 \widehat{\Lambda}_m(s) =
@@ -60,37 +60,37 @@ $$
 \end{pmatrix}
 $$
 
-avec $\mu_m = \sqrt{s^2 + m^2/R^2}$.
+where $\mu_m = \sqrt{s^2 + m^2/R^2}$.
 
-L'inversion vers le domaine temporel combine :
+The inversion back to the time domain combines:
 
-1. **Décomposition de Mittag-Leffler** des entrées de la matrice
-2. **Transfert de dérivée** pour rendre la série absolument convergente
-3. Expression finale : convolutions temporelles à noyaux $\sin(\omega_{m,k} \, t)/\omega_{m,k}$, avec $\omega_{m,k}^2 = (k\pi/L)^2 + (m/R)^2$
+1. **Mittag-Leffler expansion** of the matrix entries
+2. **Derivative transfer** to make the series absolutely convergent
+3. Final expression: temporal convolutions with kernels $\sin(\omega_{m,k} \, t)/\omega_{m,k}$, where $\omega_{m,k}^2 = (k\pi/L)^2 + (m/R)^2$
 
-La formule est validée numériquement par comparaison avec une solution de référence aux différences finies haute résolution (schéma centré d'ordre 2, $N_z = 1000$). L'accord est de l'ordre du pourcent pour les modes bas ($m \in \{0,1,2,3\}$), avec analyse détaillée de la dégradation aux grands modes (condensation des fréquences propres, amplification par le terme de masse, limite de la référence elle-même).
+The formula is validated numerically by comparison with a high-resolution finite-difference reference solution (second-order centered scheme, $N_z = 1000$). The agreement is of the order of one percent for the low modes ($m \in \{0,1,2,3\}$), together with a detailed analysis of the degradation at large modes (clustering of the eigenfrequencies, amplification by the mass term, limitation of the reference solution itself).
 
-### Chapitre 5 — Problème inverse
+### Chapter 5 — Inverse problem
 
-Reconstruction des paramètres géométriques à partir de la seule connaissance de $\Lambda$ :
+Reconstruction of the geometric parameters from knowledge of $\Lambda$ alone:
 
-- **Disque** — Rayon *R* : méthodes par limite statique ou par fréquences propres.
-- **Cylindre** — Longueur *L* : inversion par le coefficient diagonal, par le rapport des coefficients, ou par développement asymptotique haute fréquence.
+- **Disc** — Radius *R*: methods based on the static limit or on the eigenfrequencies.
+- **Cylinder** — Length *L*: inversion via the diagonal coefficient, via the ratio of the coefficients, or via a high-frequency asymptotic expansion.
 
 ---
 
-## Contenu du dépôt
+## Repository contents
 
 ```
 .
-├── Rapport_PR_Elias_Massaro.pdf           # Rapport de recherche complet (6 chapitres)
-├── validation_cylindre_v2.ipynb           # Notebook Jupyter — validation numérique (chapitre 4)
+├── Rapport_PR_Elias_Massaro.pdf           # Full research report (6 chapters)
+├── validation_cylindre_v2.ipynb           # Jupyter notebook — numerical validation (Chapter 4)
 └── README.md
 ```
 
 ---
 
-## Dépendances
+## Dependencies
 
 ```
 numpy
@@ -98,7 +98,7 @@ matplotlib
 jupyter
 ```
 
-Installation :
+Installation:
 
 ```bash
 pip install numpy matplotlib jupyter
@@ -106,10 +106,10 @@ pip install numpy matplotlib jupyter
 
 ---
 
-## Lancer le notebook
+## Running the notebook
 
 ```bash
 jupyter notebook validation_cylindre_v2.ipynb
 ```
 
-Le notebook est auto-contenu et couvre intégralement la validation du chapitre 4 : solution de référence par différences finies, évaluation de la formule spectrale, comparaison superposée pour les modes $m \in \{0, 1, 2, 3\}$, étude de convergence en $k_{\max}$, et analyse du régime haute fréquence ($m \in \{10, 40, 100\}$).
+The notebook is self-contained and covers the whole of the Chapter 4 validation: reference solution by finite differences, evaluation of the spectral formula, superimposed comparison for the modes $m \in \{0, 1, 2, 3\}$, convergence study in $k_{\max}$, and analysis of the high-frequency regime ($m \in \{10, 40, 100\}$).
